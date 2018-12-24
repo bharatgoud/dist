@@ -1,0 +1,992 @@
++++++++ Parsing domain if available: +++++++++++++
+/apps/opt/weblogic/config/bosi----- /apps/opt/weblogic/config/bosi
+/apps/opt/weblogic/config/bpi----- /apps/opt/weblogic/config/bpi
+/apps/opt/weblogic/config/esgservices----- /apps/opt/weblogic/config/esgservices
+/apps/opt/weblogic/config/apm----- /apps/opt/weblogic/config/apm
+ ***************  Domain Name:  /apps/opt/weblogic/config/bpi -- configuration details: ***************
+domain_version : 10.3.6.0
+ --------------  servers: --------------
+server_name : AdminServer
+server_name : bpi_srv_01
+listen_port : 7011
+server_cluster : bpiCluster
+ --------------  clusters: --------------
+cluster_name : bpiCluster
+ --------------  applications: --------------
+app_name : Process Integration
+target_servers : bpiCluster
+module_type : ear
+app_path : /apps/opt/bpi/lib/bpi-integration.ear
+---------------------------------
+app_name : bpi
+target_servers : bpiCluster
+module_type : ear
+app_path : /apps/opt/bpi/lib/bpi.ear
+---------------------------------
+ --------------  datasources: --------------
+datasource_name : CWConnectionPool
+target_server : bpi_srv_01
+datasource_location : jdbc/CWConnectionPool-0882-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@uiioci01d-zm0fj-scan.dbclient2.ocivesnpusashbu.oraclevcn.com:1521/CLDPQSITA
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:jdbc/CW
+---------------------------------------
+datasource_name : DGF Data Source
+target_server : bpi_srv_01
+datasource_location : jdbc/DGF_Data_Source-6220-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@113.130.228.242:1521/IORDER
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.DgfDataSource
+---------------------------------------
+datasource_name : ODM Data Source for ODM Pool
+target_server : bpi_srv_01
+datasource_location : jdbc/ODM_Data_Source_for_ODM_Pool-2110-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@113.130.228.242:1521/IORDER
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.odm.TXDataSource
+---------------------------------------
+datasource_name : BPI Data Source for BPI Pool
+target_server : bpi_srv_01
+datasource_location : jdbc/BPI_Data_Source_for_BPI_Pool-5164-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@113.130.228.242:1521/IORDER
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.bpi.TXDataSource
+---------------------------------------
+datasource_name : AORTA DataSource
+target_server : bpi_srv_01
+datasource_location : jdbc/AORTA_DataSource-5916-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@113.130.228.242:1521/IORDER
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.AORTADataSource
+---------------------------------------
+datasource_name : ELI Data Source
+target_server : bpi_srv_01
+datasource_location : jdbc/ELI_Data_Source-0739-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@113.130.228.242:1521/IORDER
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.ELIDataSource
+---------------------------------------
+datasource_name : Pats TX Data Source
+target_server : bpi_srv_01
+datasource_location : jdbc/Pats_TX_Data_Source-4843-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@113.130.228.242:1521/IORDER
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.pats.PatsTXDataSource
+---------------------------------------
+datasource_name : enterprise.NWASSPool
+target_server : bpi_srv_01
+datasource_location : jdbc/enterprise2eNWASSPool-6743-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@113.130.228.242:1521/IORDER
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.dsNwass
+---------------------------------------
+datasource_name : JCMS Data Source for JCMS Pool
+target_server : bpi_srv_01
+datasource_location : jdbc/JCMS_Data_Source_for_JCMS_Pool-1642-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@113.130.228.242:1521/IORDER
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.JcmsDataSource
+---------------------------------------
+ --------------  jms resources: --------------
+jmsresource_name : SAFMetricsBridge
+target_server : bpiCluster
+jmsresource_location : jms/safmetricsbridge-jms.xml
+---------------------------------------
+jmsresource_name : AsyncWebServiceJMSResource
+target_server : bpiCluster
+jmsresource_location : jms/asyncwebservicejmsresource-jms.xml
+---------------------------------------
+jmsresource_name : OrderServerJMSResource
+target_server : bpiCluster
+jmsresource_location : jms/orderserverjmsresource-jms.xml
+---------------------------------------
+jmsresource_name : BtmJMSServerJMSResource
+target_server : bpiCluster
+jmsresource_location : jms/btmjmsserverjmsresource-jms.xml
+---------------------------------------
+jmsresource_name : iFlowJMSResource
+target_server : bpiCluster
+jmsresource_location : jms/iflowjmsresource-jms.xml
+---------------------------------------
+jmsresource_name : EISPOrderMessageJMSResource
+target_server : bpiCluster
+jmsresource_location : jms/eispordermessagejmsresource-jms.xml
+---------------------------------------
+jmsresource_name : JMSBPIServerJMSResource
+target_server : bpiCluster
+jmsresource_location : jms/jmsbpiserverjmsresource-jms.xml
+---------------------------------------
+jmsresource_name : BPIJMSServerJMSResource
+target_server : bpiCluster
+jmsresource_location : jms/bpijmsserverjmsresource-jms.xml
+---------------------------------------
+jmsresource_name : JcmsJMSServerJMSResource
+target_server : bpiCluster
+jmsresource_location : jms/jcmsjmsserverjmsresource-jms.xml
+---------------------------------------
+jmsresource_name : bpiJMSResource
+target_server : bpiCluster
+jmsresource_location : jms/bpijmsresource-jms.xml
+---------------------------------------
+ ***************  Domain Name:  /apps/opt/weblogic/config/bosi -- configuration details: ***************
+domain_version : 10.3.6.0
+ --------------  servers: --------------
+server_name : AdminServer
+listen_port : 6001
+server_name : bosi_srv_01
+listen_port : 7777
+server_cluster : bosiCluster
+ --------------  clusters: --------------
+cluster_name : bosiCluster
+ --------------  applications: --------------
+app_name : vip
+target_servers : bosiCluster
+module_type : ear
+app_path : /apps/opt/weblogic/bosi/bosi.ear
+---------------------------------
+app_name : bosi
+target_servers : bosiCluster
+module_type : war
+app_path : /apps/opt/weblogic/bosi/prescontent/eBOSI
+---------------------------------
+app_name : vzb-jamon
+target_servers : bosiCluster
+module_type : war
+app_path : /apps/opt/weblogic/bosi/war/vzb-jamon-2.73.war
+---------------------------------
+ --------------  datasources: --------------
+datasource_name : EnterpriseBOSITxPool
+target_server : bosi_srv_01
+datasource_location : jdbc/EnterpriseBOSITxPool-0324-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@113.130.228.242:1521/IORDER
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.eBOSI.BOSITxDataSource
+---------------------------------------
+datasource_name : enterprise.BosiDMSVPool
+target_server : bosi_srv_01
+datasource_location : jdbc/enterprise2eBosiDMSVPool-7928-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@113.130.228.242:1521/IORDER
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.eBOSI.BOSIDMSVDataSource
+---------------------------------------
+datasource_name : CafePool
+target_server : bosi_srv_01
+datasource_location : jdbc/CafePool-8183-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@cafe-db1.basit.com:1521:cafe2
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.eBOSI.CAFEDataSource
+---------------------------------------
+datasource_name : EnterpriseBosiBRIPool
+target_server : bosi_srv_01
+datasource_location : jdbc/EnterpriseBosiBRIPool-8879-jdbc.xml
+jdbc_url:jdbc:db2://mvsdev3.mcilink.com:4370/MCINET_DBF4
+driver_name:com.ibm.db2.jcc.DB2Driver
+jndi_name:enterprise.eBOSI.BOSIBill.BRIDataSource
+---------------------------------------
+datasource_name : iBillEDWPool
+target_server : bosi_srv_01
+datasource_location : jdbc/iBillEDWPool-5228-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@138.83.136.23:1521:MDWU
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.eBOSI.BOSIBill.EDWDataSource
+---------------------------------------
+datasource_name : ExpressArchivePool
+target_server : bosi_srv_01
+datasource_location : jdbc/ExpressArchivePool-1826-jdbc.xml
+jdbc_url:jdbc:db2://SL73.verizon.com:3027/DDF_D39A
+driver_name:com.ibm.db2.jcc.DB2Driver
+jndi_name:enterprise.eBOSI.BOSIBill.ExpressArchiveDataSource
+---------------------------------------
+datasource_name : EnterpriseOETSPool
+target_server : bosi_srv_01
+datasource_location : jdbc/EnterpriseOETSPool-8718-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@issdbdev.mcilink.com:1521:FOETSDEV
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.OETSDataSource
+---------------------------------------
+datasource_name : enterprise.OrderPro
+target_server : bosi_srv_01
+datasource_location : jdbc/enterprise2eOrderPro-1828-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@mimsy.mcilink.com:1899:OPDEV1
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.eBOSI.OrderProDataSource
+---------------------------------------
+datasource_name : OSConnectionPool
+target_server : bosi_srv_01
+datasource_location : jdbc/OSConnectionPool-6354-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@ashopdb01b.mcilink.com:1822:OPDEV2
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:jdbc/OPRO
+---------------------------------------
+datasource_name : ServiceFirstPool
+target_server : bosi_srv_01
+datasource_location : jdbc/ServiceFirstPool-1113-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@pdcsfd16.vzbi.com:1521:SFTEST
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.eBOSI.ServiceFirstDataSource
+---------------------------------------
+datasource_name : enterprise.StatusPro
+target_server : bosi_srv_01
+datasource_location : jdbc/enterprise2eStatusPro-7410-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@OMZRAC11-VIP.MCILINK.COM:1521:XSPRX
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.eBOSI.StatusProDataSource
+---------------------------------------
+datasource_name : VMM Data Source
+target_server : bosi_srv_01
+datasource_location : jdbc/VMM_Data_Source-2937-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@113.130.228.242:1521/IORDER
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.VMMDataSource
+---------------------------------------
+datasource_name : Data Source for Visper Pool
+target_server : bosi_srv_01
+datasource_location : jdbc/Data_Source_for_Visper_Pool-7687-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@113.130.228.242:1521/IORDER
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.SMMDataSource
+---------------------------------------
+datasource_name : operations.MetricsPool
+target_server : bosi_srv_01
+datasource_location : jdbc/operations2eMetricsPool-6595-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@vpbsctd11scan.ebiz.verizon.com:1800/VECDBQA4
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.MetricsDataSource
+---------------------------------------
+datasource_name : JCMS Data Source for JCMS Pool
+target_server : bosi_srv_01
+datasource_location : jdbc/JCMS_Data_Source_for_JCMS_Pool-1642-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@113.130.228.242:1521/IORDER
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.JcmsDataSource
+---------------------------------------
+datasource_name : ELI Data Source
+target_server : bosi_srv_01
+datasource_location : jdbc/ELI_Data_Source-0739-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@113.130.228.242:1521/IORDER
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.ELIDataSource
+---------------------------------------
+datasource_name : DGF Data Source
+target_server : bosi_srv_01
+datasource_location : jdbc/DGF_Data_Source-6220-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@113.130.228.242:1521/IORDER
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.DgfDataSource
+---------------------------------------
+datasource_name : enterprise.CPPool
+target_server : bosi_srv_01
+datasource_location : jdbc/enterprise2eCPPool-6710-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@113.130.228.242:1521/IORDER
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.CPDataSource
+---------------------------------------
+datasource_name : CWConnectionPool
+target_server : bosi_srv_01
+datasource_location : jdbc/CWConnectionPool-0882-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@uiioci01d-zm0fj-scan.dbclient2.ocivesnpusashbu.oraclevcn.com:1521/CLDPQSITA
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:jdbc/CW
+---------------------------------------
+ --------------  jms resources: --------------
+jmsresource_name : SAFMetricsBridge
+target_server : bosiCluster
+jmsresource_location : jms/safmetricsbridge-jms.xml
+---------------------------------------
+jmsresource_name : BQAAsyncServerJMSResource
+target_server : bosiCluster
+jmsresource_location : jms/bqaasyncserverjmsresource-jms.xml
+---------------------------------------
+jmsresource_name : bosiJMSResource
+target_server : bosiCluster
+jmsresource_location : jms/bosijmsresource-jms.xml
+---------------------------------------
+jmsresource_name : SystemModule-GCMETMS
+target_server : bosiCluster
+jmsresource_location : jms/systemmodule-gcmetms-jms.xml
+---------------------------------------
+jmsresource_name : SystemModule-GCM
+target_server : bosiCluster
+jmsresource_location : jms/systemmodule-gcm-jms.xml
+---------------------------------------
+ ***************  Domain Name:  /apps/opt/weblogic/config/esgservices -- configuration details: ***************
+domain_version : 10.3.6.0
+ --------------  servers: --------------
+server_name : AdminServer
+listen_port : 8003
+server_name : esgservices_srv_01
+listen_port : 8888
+server_cluster : esgservicesCluster
+ --------------  clusters: --------------
+cluster_name : esgservicesCluster
+ --------------  applications: --------------
+app_name : trService
+target_servers : esgservicesCluster
+module_type : war
+app_path : /apps/opt/esgservices/trService.ear
+---------------------------------
+app_name : wfServices
+target_servers : esgservicesCluster
+module_type : war
+app_path : /apps/opt/esgservices/wfServices.ear
+---------------------------------
+app_name : Intbilling-emea
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/Intbilling-emea.ear
+---------------------------------
+app_name : ecpesg
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/esgservices.ear
+---------------------------------
+app_name : irmService
+target_servers : esgservicesCluster
+module_type : war
+app_path : /apps/opt/esgservices/irmService.ear
+---------------------------------
+app_name : wgEnrollment
+target_servers : esgservicesCluster
+module_type : war
+app_path : /apps/opt/esgservices/wgEnrollment.ear
+---------------------------------
+app_name : billing-emea
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/billing-emea.ear
+---------------------------------
+app_name : esgws_app
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/adminService.ear
+---------------------------------
+app_name : pmiService
+target_servers : esgservicesCluster
+module_type : war
+app_path : /apps/opt/esgservices/pmiService.ear
+---------------------------------
+app_name : isrService
+target_servers : esgservicesCluster
+module_type : war
+app_path : /apps/opt/esgservices/isrService.ear
+---------------------------------
+app_name : ECCServiceAlert
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/ECCServiceAlert.ear
+---------------------------------
+app_name : wgService
+target_servers : esgservicesCluster
+module_type : war
+app_path : /apps/opt/esgservices/wgService.ear
+---------------------------------
+app_name : amservices
+target_servers : esgservicesCluster
+module_type : war
+app_path : /apps/opt/esgservices/amServices.ear
+---------------------------------
+app_name : publishOrderDetails
+target_servers : esgservicesCluster
+module_type : war
+app_path : /apps/opt/esgservices/publishOrderDetails.ear
+---------------------------------
+app_name : eQuoteService
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/eQuoteService.ear
+---------------------------------
+app_name : wgEntitlement
+target_servers : esgservicesCluster
+module_type : war
+app_path : /apps/opt/esgservices/wgEntitlement.ear
+---------------------------------
+app_name : cdService
+target_servers : esgservicesCluster
+module_type : war
+app_path : /apps/opt/esgservices/cdService.ear
+---------------------------------
+app_name : inquiryService
+target_servers : esgservicesCluster
+module_type : war
+app_path : /apps/opt/esgservices/inquiryService.ear
+---------------------------------
+app_name : iOrder
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/iorderServices.ear
+---------------------------------
+app_name : ecs
+target_servers : esgservicesCluster
+module_type : war
+app_path : /apps/opt/esgservices/war/ecsService.war
+---------------------------------
+app_name : nmEntitlementService
+target_servers : esgservicesCluster
+module_type : war
+app_path : /apps/opt/esgservices/nmEntitlementService.ear
+---------------------------------
+app_name : global
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/globalServices.ear
+---------------------------------
+app_name : vwmsServices
+target_servers : esgservicesCluster
+module_type : war
+app_path : /apps/opt/esgservices/vwmsServices.ear
+---------------------------------
+app_name : GCHService
+target_servers : esgservicesCluster
+module_type : war
+app_path : /apps/opt/esgservices/GCHService.ear
+---------------------------------
+app_name : ECCSOAPFaultDetails
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/ECCSOAPFaultDetails.ear
+---------------------------------
+app_name : ecsResponseService
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/ecsResponseService.ear
+---------------------------------
+app_name : portalOrderService
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/portalOrderService.ear
+---------------------------------
+app_name : Epayment-status
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/Epayment-status.ear
+---------------------------------
+app_name : PaymentAccount
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/PaymentAccount.ear
+---------------------------------
+app_name : VECOnlineBilling
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/VECOnlineBilling.ear
+---------------------------------
+app_name : PaymentProfile
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/Payment-profile.ear
+---------------------------------
+app_name : orderSummaryService
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/orderSummaryService.ear
+---------------------------------
+app_name : ddcService
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/ddcService.ear
+---------------------------------
+app_name : vzbOrderUpdateService
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/vzbOrderUpdateService.ear
+---------------------------------
+app_name : gescService
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/gescService.ear
+---------------------------------
+app_name : gescServiceWs
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/gescServicejaxws.ear
+---------------------------------
+app_name : aliasUpdatesWs
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/aliasUpdatesWs.ear
+---------------------------------
+app_name : FiosService
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/fiosServiceEar.ear
+---------------------------------
+app_name : portalEaasService
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/portalEaasService.ear
+---------------------------------
+app_name : portalPremisysService
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/portalPremisysService.ear
+---------------------------------
+app_name : metricsService
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/metricsService.ear
+---------------------------------
+app_name : gchAmServices
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/gchAmServices.ear
+---------------------------------
+app_name : isrServiceWS
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/isrServicejaxws.ear
+---------------------------------
+app_name : nxPortalServices
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/nxPortalServices.ear
+---------------------------------
+app_name : b2cSpreadSheetReadyWS
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/b2cSpreadSheetReadyjaxws.ear
+---------------------------------
+app_name : wgEntitlementDoc
+target_servers : esgservicesCluster
+module_type : war
+app_path : /apps/opt/esgservices/wgEntitlementDoc.ear
+---------------------------------
+app_name : wgUserServices
+target_servers : esgservicesCluster
+module_type : war
+app_path : /apps/opt/esgservices/wgUserServices.ear
+---------------------------------
+app_name : smServices
+target_servers : esgservicesCluster
+module_type : war
+app_path : /apps/opt/esgservices/smServices.ear
+---------------------------------
+app_name : q2cServices
+target_servers : esgservicesCluster
+module_type : war
+app_path : /apps/opt/esgservices/q2cServices.ear
+---------------------------------
+app_name : wgGchServices
+target_servers : esgservicesCluster
+module_type : war
+app_path : /apps/opt/esgservices/wgGchServices.ear
+---------------------------------
+app_name : wgMobileServices
+target_servers : esgservicesCluster
+module_type : war
+app_path : /apps/opt/esgservices/wgMobileServices.ear
+---------------------------------
+app_name : e2eiService
+target_servers : esgservicesCluster
+module_type : war
+app_path : /apps/opt/esgservices/e2eiService.ear
+---------------------------------
+app_name : VECTransactionService
+target_servers : esgservicesCluster
+module_type : ear
+app_path : /apps/opt/esgservices/txnServices.ear
+---------------------------------
+ --------------  datasources: --------------
+datasource_name : esgservices.CPPool
+target_server : esgservicesCluster
+datasource_location : jdbc/esgservices2eCPPool-0880-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.CPDataSource
+---------------------------------------
+datasource_name : esgservices.CPPoolTx
+target_server : esgservicesCluster
+datasource_location : jdbc/esgservices2eCPPoolTx-9236-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.pats.PatsTXDataSource
+---------------------------------------
+datasource_name : enterprise.VMMPool
+target_server : esgservicesCluster
+datasource_location : jdbc/enterprise2eVMMPool-3643-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.VMMDataSource
+---------------------------------------
+datasource_name : operations.IBTMPool
+target_server : esgservicesCluster
+datasource_location : jdbc/operations2eIBTMPool-7728-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.IbtmDataSource
+---------------------------------------
+datasource_name : operations.EnterpriseMIBPool
+target_server : esgservicesCluster
+datasource_location : jdbc/operations2eEnterpriseMIBPool-4337-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.MIBDataSource
+---------------------------------------
+datasource_name : operations.DGFPool
+target_server : esgservicesCluster
+datasource_location : jdbc/operations2eDGFPool-6627-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.DgfDataSource
+---------------------------------------
+datasource_name : operations.AORTAPool
+target_server : esgservicesCluster
+datasource_location : jdbc/operations2eAORTAPool-8043-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.AORTADataSource
+---------------------------------------
+datasource_name : operations.EliPool
+target_server : esgservicesCluster
+datasource_location : jdbc/operations2eEliPool-8876-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.ELIDataSource
+---------------------------------------
+datasource_name : metric.MetricsPool
+target_server : esgservicesCluster
+datasource_location : jdbc/metric2eMetricsPool-6335-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.MetricsDataSource
+---------------------------------------
+ --------------  jms resources: --------------
+jmsresource_name : SAFMetricsBridge
+target_server : esgservicesCluster
+jmsresource_location : jms/safmetricsbridge-jms.xml
+---------------------------------------
+jmsresource_name : BOSIECSJMSResource
+target_server : esgservicesCluster
+jmsresource_location : jms/bosiecsjmsresource-jms.xml
+---------------------------------------
+jmsresource_name : esgservicesJMSResource
+target_server : esgservicesCluster
+jmsresource_location : jms/esgservicesjmsresource-jms.xml
+---------------------------------------
+ ***************  Domain Name:  /apps/opt/weblogic/config/apm -- configuration details: ***************
+domain_version : 10.3.6.0
+ --------------  servers: --------------
+server_name : AdminServer
+listen_port : 9001
+server_name : apm_srv_01
+listen_port : 9797
+server_cluster : apmCluster
+ --------------  clusters: --------------
+cluster_name : apmCluster
+ --------------  applications: --------------
+app_name : apm_ejbs
+target_servers : apmCluster
+module_type : ear
+app_path : /apps/opt/apm/apm.ear
+---------------------------------
+app_name : operations
+target_servers : apmCluster
+module_type : war
+app_path : /apps/opt/apm/prescontent/operations
+---------------------------------
+app_name : vzb-jamon
+target_servers : apmCluster
+module_type : war
+app_path : /apps/opt/apm/war/vzb-jamon-2.73.war
+---------------------------------
+ --------------  datasources: --------------
+datasource_name : EnterpriseB2BPool
+target_server : apmCluster
+datasource_location : jdbc/EnterpriseB2BPool-8941-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:b2bDataSource
+---------------------------------------
+datasource_name : EnterpriseJcmsPool
+target_server : apmCluster
+datasource_location : jdbc/EnterpriseJcmsPool-2300-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.xa.client.OracleXADataSource
+jndi_name:enterprise.JcmsDataSource
+---------------------------------------
+datasource_name : EnterpriseVASPPool
+target_server : apmCluster
+datasource_location : jdbc/EnterpriseVASPPool-5403-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.VASPDataSource
+---------------------------------------
+datasource_name : EnterpriseVASPPoolTx
+target_server : apmCluster
+datasource_location : jdbc/EnterpriseVASPPoolTx-1079-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.ASPDataSource
+---------------------------------------
+datasource_name : avsEbizdev2
+target_server : apmCluster
+datasource_location : jdbc/avsEbizdev2-6199-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+---------------------------------------
+datasource_name : apm.B2bPool
+target_server : apmCluster
+datasource_location : jdbc/apm2eB2bPool-4078-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.B2bDataSource
+---------------------------------------
+datasource_name : apm.VMMOPUSPool
+target_server : apmCluster
+datasource_location : jdbc/apm2eVMMOPUSPool-9265-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@143.251.144.27:1526:ldss
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.VMMOPUSDataSource
+---------------------------------------
+datasource_name : enterpriseDDFRGPool
+target_server : apmCluster
+datasource_location : jdbc/enterpriseDDFRGPool-1402-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.DfrgDataSource
+---------------------------------------
+datasource_name : apm.CPPool
+target_server : apmCluster
+datasource_location : jdbc/apm2eCPPool-7591-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.CPDataSource
+---------------------------------------
+datasource_name : apm.CPPoolTx
+target_server : apmCluster
+datasource_location : jdbc/apm2eCPPoolTx-7555-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.CPTxDataSource
+---------------------------------------
+datasource_name : apm.CPPoolPatsTx
+target_server : apmCluster
+datasource_location : jdbc/apm2eCPPoolPatsTx-1411-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.pats.PatsTXDataSource
+---------------------------------------
+datasource_name : apm.EAPool
+target_server : apmCluster
+datasource_location : jdbc/apm2eEAPool-2104-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.EADataSource
+---------------------------------------
+datasource_name : apm.EAPoolTx
+target_server : apmCluster
+datasource_location : jdbc/apm2eEAPoolTx-7508-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.EATxDataSource
+---------------------------------------
+datasource_name : apm.EnterpriseSIAPool
+target_server : apmCluster
+datasource_location : jdbc/apm2eEnterpriseSIAPool-0282-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.SIADataSource
+---------------------------------------
+datasource_name : apm.Metrics5Pool
+target_server : apmCluster
+datasource_location : jdbc/apm2eMetrics5Pool-9134-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.Metrics5DataSource
+---------------------------------------
+datasource_name : apm.MetricsPool
+target_server : apmCluster
+datasource_location : jdbc/apm2eMetricsPool-5921-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.MetricsDataSource
+---------------------------------------
+datasource_name : apm.OrderPool
+target_server : apmCluster
+datasource_location : jdbc/apm2eOrderPool-0378-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+---------------------------------------
+datasource_name : apm.UtilPool
+target_server : apmCluster
+datasource_location : jdbc/apm2eUtilPool-0050-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.UtilDataSource
+---------------------------------------
+datasource_name : apm.VMMPool
+target_server : apmCluster
+datasource_location : jdbc/apm2eVMMPool-1650-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.VMMDataSource
+---------------------------------------
+datasource_name : apm.ccpsUdpPool
+target_server : apmCluster
+datasource_location : jdbc/apm2eccpsUdpPool-5398-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.ccpsOpsDataSource
+---------------------------------------
+datasource_name : operations.EnterpriseMIBPool
+target_server : apmCluster
+datasource_location : jdbc/operations2eEnterpriseMIBPool-4337-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.MIBDataSource
+---------------------------------------
+datasource_name : operations.DGFPool
+target_server : apmCluster
+datasource_location : jdbc/operations2eDGFPool-6627-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.DgfDataSource
+---------------------------------------
+datasource_name : apm.EliPool
+target_server : apmCluster
+datasource_location : jdbc/apm2eEliPool-3230-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.ELIDataSource
+---------------------------------------
+datasource_name : apm.JMSStorePool
+target_server : apmCluster
+datasource_location : jdbc/apm2eJMSStorePool-8147-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+---------------------------------------
+datasource_name : apm.JMSStorePool2
+target_server : apmCluster
+datasource_location : jdbc/apm2eJMSStorePool2-6677-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+---------------------------------------
+datasource_name : EnterpriseBPIPool
+target_server : apmCluster
+datasource_location : jdbc/EnterpriseBPIPool-8118-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.driver.OracleDriver
+jndi_name:enterprise.bpi.TXDataSource
+---------------------------------------
+datasource_name : EnterpriseODMPool
+target_server : apmCluster
+datasource_location : jdbc/EnterpriseODMPool-1645-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.odm.TXDataSource
+---------------------------------------
+datasource_name : EnterpriseEDBPool
+target_server : apmCluster
+datasource_location : jdbc/EnterpriseEDBPool-2594-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.EDBDataSource
+---------------------------------------
+datasource_name : EnterpriseEDBPoolTx
+target_server : apmCluster
+datasource_location : jdbc/EnterpriseEDBPoolTx-4846-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.EDBTxDataSource
+---------------------------------------
+datasource_name : apm.ECCPool
+target_server : apmCluster
+datasource_location : jdbc/apm2eECCPool-5759-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.ECCDatasource
+---------------------------------------
+datasource_name : OSConnectionPool
+target_server : apmCluster
+datasource_location : jdbc/OSConnectionPool-6354-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST =ekyfddd1scan.ebiz.verizon.com)(PORT = 1800))(LOAD_BALANCE = no)(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = OPSIT2)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:jdbc/OPRO
+---------------------------------------
+datasource_name : CWConnectionPool
+target_server : apmCluster
+datasource_location : jdbc/CWConnectionPool-0882-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=ekyfddd1scan.ebiz.verizon.com)(PORT=1800))(CONNECT_DATA=(SERVICE_NAME=PQSITA)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:jdbc/CW
+---------------------------------------
+datasource_name : apm.ReportPool
+target_server : apmCluster
+datasource_location : jdbc/apm2eReportPool-8912-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.xa.client.OracleXADataSource
+jndi_name:enterprise.ReportDataSource
+---------------------------------------
+datasource_name : MetrixDataSource
+target_server : apmCluster
+datasource_location : jdbc/MetrixDataSource-5174-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@omzgrid114scan.vzbi.com:1800:NTRTST
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.MobilityMetrixDataSource
+---------------------------------------
+datasource_name : EtmsReportPool
+target_server : apmCluster
+datasource_location : jdbc/EtmsReportPool-6485-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@ndcgrid120vip.vzbi.com:1800:ETMSRPST.world
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.EtmsReportDataSource
+---------------------------------------
+datasource_name : enterprise.MBOPool
+target_server : apmCluster
+datasource_location : jdbc/enterprise2eMBOPool-5799-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:enterprise.MBODataSource
+---------------------------------------
+datasource_name : gch.Metrics5Pool
+target_server : apmCluster
+datasource_location : jdbc/gch2eMetrics5Pool-7136-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@113.130.228.242:1521/IORDER
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:gch.Metrics5DataSource
+---------------------------------------
+datasource_name : gch.MetricsPool
+target_server : apmCluster
+datasource_location : jdbc/gch2eMetricsPool-7091-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@113.130.228.242:1521/IORDER
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:gch.MetricsDataSource
+---------------------------------------
+datasource_name : gch.CPPool
+target_server : apmCluster
+datasource_location : jdbc/gch2eCPPool-4165-jdbc.xml
+jdbc_url:jdbc:oracle:thin:@113.130.228.242:1521/IORDER
+driver_name:oracle.jdbc.OracleDriver
+jndi_name:gch.CPDataSource
+---------------------------------------
+ --------------  jms resources: --------------
+jmsresource_name : SAFMetricsBridge
+target_server : apmCluster
+jmsresource_location : jms/safmetricsbridge-jms.xml
+---------------------------------------
+jmsresource_name : VpsExecutionJMSResource
+target_server : apmCluster
+jmsresource_location : jms/vpsexecutionjmsresource-jms.xml
+---------------------------------------
+jmsresource_name : MetricsJMSResource
+jmsresource_location : jms/metricsjmsresource-jms.xml
+---------------------------------------
+jmsresource_name : RepairJMSResource
+target_server : apmCluster
+jmsresource_location : jms/repairjmsresource-jms.xml
+---------------------------------------
+jmsresource_name : CnpJMSResource
+target_server : apmCluster
+jmsresource_location : jms/cnpjmsresource-jms.xml
+---------------------------------------
+jmsresource_name : CnpRemoteJMSResource
+target_server : apmCluster
+jmsresource_location : jms/cnpremotejmsresource-jms.xml
+---------------------------------------
+jmsresource_name : CacheInvalidationTriggerJMSResource
+target_server : apmCluster
+jmsresource_location : jms/cacheinvalidationtriggerjmsresource-jms.xml
+---------------------------------------
+jmsresource_name : apmJMSResource
+target_server : apmCluster
+jmsresource_location : jms/apmjmsresource-jms.xml
+---------------------------------------
