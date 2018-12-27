@@ -225,7 +225,7 @@ if root is not None:
                     """
                      Identifying the jms queue config details
                     """
-                    jmsqueues = jmsresource_root.findall('jms_resource_config:queue', jns)
+                    jmsqueues = jmsresource_root.findall('jms_resource_config:uniform-distributed-queue', jns)
                     if jmsqueues:
                          for jmsqueue in jmsqueues:
                              jmsQueueObj = domain_cfg.Jmsqueue()
@@ -245,7 +245,7 @@ if root is not None:
                     """
                      Identifying the jms coneection factory details
                     """
-                    jmstopics = jmsresource_root.findall('jms_resource_config:topic', jns)
+                    jmstopics = jmsresource_root.findall('jms_resource_config:uniform-distributed-topic', jns)
                     if jmstopics is not None:
                          for jmstopic in jmstopics:
                              jmstopicObj = domain_cfg.Jmstopic()
