@@ -1,0 +1,1550 @@
+[
+  {
+    "domain_config_location": "/apps/opt/weblogic/config/bpi/config/config.xml",
+    "datasources": [
+      {
+        "jndi_name": "jdbc/CW",
+        "datasource_location": "jdbc/CWConnectionPool-0882-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "CWConnectionPool",
+        "target_server": "bpi_srv_01",
+        "jdbc_url": "jdbc:oracle:thin:@uiioci01d-zm0fj-scan.dbclient2.ocivesnpusashbu.oraclevcn.com:1521/CLDPQSITA"
+      },
+      {
+        "jndi_name": "enterprise.DgfDataSource",
+        "datasource_location": "jdbc/DGF_Data_Source-6220-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "DGF Data Source",
+        "target_server": "bpi_srv_01",
+        "jdbc_url": "jdbc:oracle:thin:@113.130.228.242:1521/IORDER"
+      },
+      {
+        "jndi_name": "enterprise.odm.TXDataSource",
+        "datasource_location": "jdbc/ODM_Data_Source_for_ODM_Pool-2110-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "ODM Data Source for ODM Pool",
+        "target_server": "bpi_srv_01",
+        "jdbc_url": "jdbc:oracle:thin:@113.130.228.242:1521/IORDER"
+      },
+      {
+        "jndi_name": "enterprise.bpi.TXDataSource",
+        "datasource_location": "jdbc/BPI_Data_Source_for_BPI_Pool-5164-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "BPI Data Source for BPI Pool",
+        "target_server": "bpi_srv_01",
+        "jdbc_url": "jdbc:oracle:thin:@113.130.228.242:1521/IORDER"
+      },
+      {
+        "jndi_name": "enterprise.AORTADataSource",
+        "datasource_location": "jdbc/AORTA_DataSource-5916-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "AORTA DataSource",
+        "target_server": "bpi_srv_01",
+        "jdbc_url": "jdbc:oracle:thin:@113.130.228.242:1521/IORDER"
+      },
+      {
+        "jndi_name": "enterprise.ELIDataSource",
+        "datasource_location": "jdbc/ELI_Data_Source-0739-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "ELI Data Source",
+        "target_server": "bpi_srv_01",
+        "jdbc_url": "jdbc:oracle:thin:@113.130.228.242:1521/IORDER"
+      },
+      {
+        "jndi_name": "enterprise.pats.PatsTXDataSource",
+        "datasource_location": "jdbc/Pats_TX_Data_Source-4843-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "Pats TX Data Source",
+        "target_server": "bpi_srv_01",
+        "jdbc_url": "jdbc:oracle:thin:@113.130.228.242:1521/IORDER"
+      },
+      {
+        "jndi_name": "enterprise.dsNwass",
+        "datasource_location": "jdbc/enterprise2eNWASSPool-6743-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "enterprise.NWASSPool",
+        "target_server": "bpi_srv_01",
+        "jdbc_url": "jdbc:oracle:thin:@113.130.228.242:1521/IORDER"
+      },
+      {
+        "jndi_name": "enterprise.JcmsDataSource",
+        "datasource_location": "jdbc/JCMS_Data_Source_for_JCMS_Pool-1642-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "JCMS Data Source for JCMS Pool",
+        "target_server": "bpi_srv_01",
+        "jdbc_url": "jdbc:oracle:thin:@113.130.228.242:1521/IORDER"
+      }
+    ],
+    "jmsresources": [
+      {
+        "jmsresource_location": "jms/safmetricsbridge-jms.xml",
+        "jmsqueues": [],
+        "subdeploy_name": null,
+        "jmsresource_name": "SAFMetricsBridge",
+        "jmstopics": [],
+        "subdeploy_target": null,
+        "target_server": "bpiCluster"
+      },
+      {
+        "jmsresource_location": "jms/asyncwebservicejmsresource-jms.xml",
+        "jmsqueues": [
+          {
+            "jmsqueue_sub_deploy_name": "JmsAsyncWebServiceServer-jmsgroup",
+            "jmsqueue_jndi_name": "enterprise.framework.AsyncWebServiceOutgoingQueue",
+            "jmsqueue_name": "AsyncWebServiceOutgoingQueue"
+          }
+        ],
+        "subdeploy_name": null,
+        "jmsresource_name": "AsyncWebServiceJMSResource",
+        "jmstopics": [],
+        "subdeploy_target": null,
+        "target_server": "bpiCluster"
+      },
+      {
+        "jmsresource_location": "jms/orderserverjmsresource-jms.xml",
+        "jmsqueues": [
+          {
+            "jmsqueue_sub_deploy_name": "OrderServer-jmsgroup",
+            "jmsqueue_jndi_name": "OrderServer",
+            "jmsqueue_name": "OrderServerQueue"
+          }
+        ],
+        "subdeploy_name": null,
+        "jmsresource_name": "OrderServerJMSResource",
+        "jmstopics": [],
+        "subdeploy_target": null,
+        "target_server": "bpiCluster"
+      },
+      {
+        "jmsresource_location": "jms/btmjmsserverjmsresource-jms.xml",
+        "jmsqueues": [
+          {
+            "jmsqueue_sub_deploy_name": "BtmJMSServer-jmsgroup",
+            "jmsqueue_jndi_name": "BtmDecompQueue",
+            "jmsqueue_name": "BtmDecompQueue"
+          },
+          {
+            "jmsqueue_sub_deploy_name": "BtmJMSServer-jmsgroup",
+            "jmsqueue_jndi_name": "BtmProcessQueue",
+            "jmsqueue_name": "BtmProcessQueue"
+          }
+        ],
+        "subdeploy_name": null,
+        "jmsresource_name": "BtmJMSServerJMSResource",
+        "jmstopics": [],
+        "subdeploy_target": null,
+        "target_server": "bpiCluster"
+      },
+      {
+        "jmsresource_location": "jms/iflowjmsresource-jms.xml",
+        "jmsqueues": [
+          {
+            "jmsqueue_sub_deploy_name": "iFlowJMSServer-jmsgroup",
+            "jmsqueue_jndi_name": "iFlow.iFlowQueue",
+            "jmsqueue_name": "iFlow.iFlowQueue"
+          },
+          {
+            "jmsqueue_sub_deploy_name": "iFlowJMSServer-jmsgroup",
+            "jmsqueue_jndi_name": "iFlow.iFlowOutBoundQueue",
+            "jmsqueue_name": "iFlow.iFlowOutBoundQueue"
+          }
+        ],
+        "subdeploy_name": null,
+        "jmsresource_name": "iFlowJMSResource",
+        "jmstopics": [],
+        "subdeploy_target": null,
+        "target_server": "bpiCluster"
+      },
+      {
+        "jmsresource_location": "jms/eispordermessagejmsresource-jms.xml",
+        "jmsqueues": [
+          {
+            "jmsqueue_sub_deploy_name": "EISPOrderMessageJmsServer-jmsgroup",
+            "jmsqueue_jndi_name": "EISPOrderMessageQueue",
+            "jmsqueue_name": "EISPOrderMessageQueue"
+          }
+        ],
+        "subdeploy_name": null,
+        "jmsresource_name": "EISPOrderMessageJMSResource",
+        "jmstopics": [],
+        "subdeploy_target": null,
+        "target_server": "bpiCluster"
+      },
+      {
+        "jmsresource_location": "jms/jmsbpiserverjmsresource-jms.xml",
+        "jmsqueues": [
+          {
+            "jmsqueue_sub_deploy_name": "JMSBPIServer-jmsgroup",
+            "jmsqueue_jndi_name": "enterprise.bpi.event.engineEventDestination",
+            "jmsqueue_name": "enterprise.bpi.event.engineEventDestination"
+          },
+          {
+            "jmsqueue_sub_deploy_name": "JMSBPIServer-jmsgroup",
+            "jmsqueue_jndi_name": "com.verizon.enterprise.workflowPI.BosiQueue",
+            "jmsqueue_name": "BosiQueue"
+          },
+          {
+            "jmsqueue_sub_deploy_name": "JMSBPIServer-jmsgroup",
+            "jmsqueue_jndi_name": "MetricsLogQueue",
+            "jmsqueue_name": "MetricsLogQueue"
+          },
+          {
+            "jmsqueue_sub_deploy_name": "JMSBPIServer-jmsgroup",
+            "jmsqueue_jndi_name": "PatsWfLogQueue",
+            "jmsqueue_name": "PatsWfLogQueue"
+          },
+          {
+            "jmsqueue_sub_deploy_name": "JMSBPIServer-jmsgroup",
+            "jmsqueue_jndi_name": "enterprise.pats.SimulatorQueue",
+            "jmsqueue_name": "enterprise.pats.SimulatorQueue"
+          },
+          {
+            "jmsqueue_sub_deploy_name": "JMSBPIServer-jmsgroup",
+            "jmsqueue_jndi_name": "enterprise.pats.PatsQueue",
+            "jmsqueue_name": "PatsJMSQueue"
+          },
+          {
+            "jmsqueue_sub_deploy_name": "JMSBPIServer-jmsgroup",
+            "jmsqueue_jndi_name": "com.verizon.enterprise.siren.EventQueue",
+            "jmsqueue_name": "SirenQueue"
+          }
+        ],
+        "subdeploy_name": null,
+        "jmsresource_name": "JMSBPIServerJMSResource",
+        "jmstopics": [],
+        "subdeploy_target": null,
+        "target_server": "bpiCluster"
+      },
+      {
+        "jmsresource_location": "jms/bpijmsserverjmsresource-jms.xml",
+        "jmsqueues": [
+          {
+            "jmsqueue_sub_deploy_name": "BPIJMSServer-jmsgroup",
+            "jmsqueue_jndi_name": "enterprise.bpi.bpmEventQueue",
+            "jmsqueue_name": "BPIEventQueue"
+          },
+          {
+            "jmsqueue_sub_deploy_name": "BPIJMSServer-jmsgroup",
+            "jmsqueue_jndi_name": "enterprise.bpi.bpmQueue",
+            "jmsqueue_name": "BPIQueue"
+          }
+        ],
+        "subdeploy_name": null,
+        "jmsresource_name": "BPIJMSServerJMSResource",
+        "jmstopics": [],
+        "subdeploy_target": null,
+        "target_server": "bpiCluster"
+      },
+      {
+        "jmsresource_location": "jms/jcmsjmsserverjmsresource-jms.xml",
+        "jmsqueues": [
+          {
+            "jmsqueue_sub_deploy_name": "JcmsJMSServer-jmsgroup",
+            "jmsqueue_jndi_name": "enterprise.jcms.JcmsQueue",
+            "jmsqueue_name": "JcmsQueue"
+          }
+        ],
+        "subdeploy_name": null,
+        "jmsresource_name": "JcmsJMSServerJMSResource",
+        "jmstopics": [],
+        "subdeploy_target": null,
+        "target_server": "bpiCluster"
+      },
+      {
+        "jmsresource_location": "jms/bpijmsresource-jms.xml",
+        "jmsqueues": [],
+        "subdeploy_name": null,
+        "jmsresource_name": "bpiJMSResource",
+        "jmstopics": [],
+        "subdeploy_target": null,
+        "target_server": "bpiCluster"
+      }
+    ],
+    "domain_name": "/apps/opt/weblogic/config/bpi",
+    "servers": [
+      {
+        "server_cluster": null,
+        "listen_port": null,
+        "server_name": "AdminServer"
+      },
+      {
+        "server_cluster": "bpiCluster",
+        "listen_port": "7011",
+        "server_name": "bpi_srv_01"
+      }
+    ],
+    "applications": [
+      {
+        "target_servers": "bpiCluster",
+        "app_path": "/apps/opt/bpi/lib/bpi-integration.ear",
+        "module_type": "ear",
+        "app_name": "Process Integration"
+      },
+      {
+        "target_servers": "bpiCluster",
+        "app_path": "/apps/opt/bpi/lib/bpi.ear",
+        "module_type": "ear",
+        "app_name": "bpi"
+      }
+    ],
+    "clusters": [
+      {
+        "cluster_name": "bpiCluster"
+      }
+    ],
+    "domain_version": "10.3.6.0"
+  },
+  {
+    "domain_config_location": "/apps/opt/weblogic/config/bosi/config/config.xml",
+    "datasources": [
+      {
+        "jndi_name": "enterprise.eBOSI.BOSITxDataSource",
+        "datasource_location": "jdbc/EnterpriseBOSITxPool-0324-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "EnterpriseBOSITxPool",
+        "target_server": "bosi_srv_01",
+        "jdbc_url": "jdbc:oracle:thin:@113.130.228.242:1521/IORDER"
+      },
+      {
+        "jndi_name": "enterprise.eBOSI.BOSIDMSVDataSource",
+        "datasource_location": "jdbc/enterprise2eBosiDMSVPool-7928-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "enterprise.BosiDMSVPool",
+        "target_server": "bosi_srv_01",
+        "jdbc_url": "jdbc:oracle:thin:@113.130.228.242:1521/IORDER"
+      },
+      {
+        "jndi_name": "enterprise.eBOSI.CAFEDataSource",
+        "datasource_location": "jdbc/CafePool-8183-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "CafePool",
+        "target_server": "bosi_srv_01",
+        "jdbc_url": "jdbc:oracle:thin:@cafe-db1.basit.com:1521:cafe2"
+      },
+      {
+        "jndi_name": "enterprise.eBOSI.BOSIBill.BRIDataSource",
+        "datasource_location": "jdbc/EnterpriseBosiBRIPool-8879-jdbc.xml",
+        "driver_name": "com.ibm.db2.jcc.DB2Driver",
+        "datasource_name": "EnterpriseBosiBRIPool",
+        "target_server": "bosi_srv_01",
+        "jdbc_url": "jdbc:db2://mvsdev3.mcilink.com:4370/MCINET_DBF4"
+      },
+      {
+        "jndi_name": "enterprise.eBOSI.BOSIBill.EDWDataSource",
+        "datasource_location": "jdbc/iBillEDWPool-5228-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "iBillEDWPool",
+        "target_server": "bosi_srv_01",
+        "jdbc_url": "jdbc:oracle:thin:@138.83.136.23:1521:MDWU"
+      },
+      {
+        "jndi_name": "enterprise.eBOSI.BOSIBill.ExpressArchiveDataSource",
+        "datasource_location": "jdbc/ExpressArchivePool-1826-jdbc.xml",
+        "driver_name": "com.ibm.db2.jcc.DB2Driver",
+        "datasource_name": "ExpressArchivePool",
+        "target_server": "bosi_srv_01",
+        "jdbc_url": "jdbc:db2://SL73.verizon.com:3027/DDF_D39A"
+      },
+      {
+        "jndi_name": "enterprise.OETSDataSource",
+        "datasource_location": "jdbc/EnterpriseOETSPool-8718-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "EnterpriseOETSPool",
+        "target_server": "bosi_srv_01",
+        "jdbc_url": "jdbc:oracle:thin:@issdbdev.mcilink.com:1521:FOETSDEV"
+      },
+      {
+        "jndi_name": "enterprise.eBOSI.OrderProDataSource",
+        "datasource_location": "jdbc/enterprise2eOrderPro-1828-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "enterprise.OrderPro",
+        "target_server": "bosi_srv_01",
+        "jdbc_url": "jdbc:oracle:thin:@mimsy.mcilink.com:1899:OPDEV1"
+      },
+      {
+        "jndi_name": "jdbc/OPRO",
+        "datasource_location": "jdbc/OSConnectionPool-6354-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "OSConnectionPool",
+        "target_server": "bosi_srv_01",
+        "jdbc_url": "jdbc:oracle:thin:@ashopdb01b.mcilink.com:1822:OPDEV2"
+      },
+      {
+        "jndi_name": "enterprise.eBOSI.ServiceFirstDataSource",
+        "datasource_location": "jdbc/ServiceFirstPool-1113-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "ServiceFirstPool",
+        "target_server": "bosi_srv_01",
+        "jdbc_url": "jdbc:oracle:thin:@pdcsfd16.vzbi.com:1521:SFTEST"
+      },
+      {
+        "jndi_name": "enterprise.eBOSI.StatusProDataSource",
+        "datasource_location": "jdbc/enterprise2eStatusPro-7410-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "enterprise.StatusPro",
+        "target_server": "bosi_srv_01",
+        "jdbc_url": "jdbc:oracle:thin:@OMZRAC11-VIP.MCILINK.COM:1521:XSPRX"
+      },
+      {
+        "jndi_name": "enterprise.VMMDataSource",
+        "datasource_location": "jdbc/VMM_Data_Source-2937-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "VMM Data Source",
+        "target_server": "bosi_srv_01",
+        "jdbc_url": "jdbc:oracle:thin:@113.130.228.242:1521/IORDER"
+      },
+      {
+        "jndi_name": "enterprise.SMMDataSource",
+        "datasource_location": "jdbc/Data_Source_for_Visper_Pool-7687-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "Data Source for Visper Pool",
+        "target_server": "bosi_srv_01",
+        "jdbc_url": "jdbc:oracle:thin:@113.130.228.242:1521/IORDER"
+      },
+      {
+        "jndi_name": "enterprise.MetricsDataSource",
+        "datasource_location": "jdbc/operations2eMetricsPool-6595-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "operations.MetricsPool",
+        "target_server": "bosi_srv_01",
+        "jdbc_url": "jdbc:oracle:thin:@vpbsctd11scan.ebiz.verizon.com:1800/VECDBQA4"
+      },
+      {
+        "jndi_name": "enterprise.JcmsDataSource",
+        "datasource_location": "jdbc/JCMS_Data_Source_for_JCMS_Pool-1642-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "JCMS Data Source for JCMS Pool",
+        "target_server": "bosi_srv_01",
+        "jdbc_url": "jdbc:oracle:thin:@113.130.228.242:1521/IORDER"
+      },
+      {
+        "jndi_name": "enterprise.ELIDataSource",
+        "datasource_location": "jdbc/ELI_Data_Source-0739-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "ELI Data Source",
+        "target_server": "bosi_srv_01",
+        "jdbc_url": "jdbc:oracle:thin:@113.130.228.242:1521/IORDER"
+      },
+      {
+        "jndi_name": "enterprise.DgfDataSource",
+        "datasource_location": "jdbc/DGF_Data_Source-6220-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "DGF Data Source",
+        "target_server": "bosi_srv_01",
+        "jdbc_url": "jdbc:oracle:thin:@113.130.228.242:1521/IORDER"
+      },
+      {
+        "jndi_name": "enterprise.CPDataSource",
+        "datasource_location": "jdbc/enterprise2eCPPool-6710-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "enterprise.CPPool",
+        "target_server": "bosi_srv_01",
+        "jdbc_url": "jdbc:oracle:thin:@113.130.228.242:1521/IORDER"
+      },
+      {
+        "jndi_name": "jdbc/CW",
+        "datasource_location": "jdbc/CWConnectionPool-0882-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "CWConnectionPool",
+        "target_server": "bosi_srv_01",
+        "jdbc_url": "jdbc:oracle:thin:@uiioci01d-zm0fj-scan.dbclient2.ocivesnpusashbu.oraclevcn.com:1521/CLDPQSITA"
+      }
+    ],
+    "jmsresources": [
+      {
+        "jmsresource_location": "jms/safmetricsbridge-jms.xml",
+        "jmsqueues": [],
+        "subdeploy_name": null,
+        "jmsresource_name": "SAFMetricsBridge",
+        "jmstopics": [],
+        "subdeploy_target": null,
+        "target_server": "bosiCluster"
+      },
+      {
+        "jmsresource_location": "jms/bqaasyncserverjmsresource-jms.xml",
+        "jmsqueues": [
+          {
+            "jmsqueue_sub_deploy_name": "BQAAsyncServer-jmsgroup",
+            "jmsqueue_jndi_name": "BQAErrorHandlerQueue",
+            "jmsqueue_name": "BQAErrorHandlerQueue"
+          },
+          {
+            "jmsqueue_sub_deploy_name": "BQAAsyncServer-jmsgroup",
+            "jmsqueue_jndi_name": "BQAConsumerQueue",
+            "jmsqueue_name": "BQAConsumerQueue"
+          }
+        ],
+        "subdeploy_name": null,
+        "jmsresource_name": "BQAAsyncServerJMSResource",
+        "jmstopics": [
+          {
+            "jmstopic_jndi_name": "BQABOSIConsumerTopic",
+            "jmstopic_name": "BQABOSIConsumerTopic"
+          }
+        ],
+        "subdeploy_target": null,
+        "target_server": "bosiCluster"
+      },
+      {
+        "jmsresource_location": "jms/bosijmsresource-jms.xml",
+        "jmsqueues": [
+          {
+            "jmsqueue_sub_deploy_name": null,
+            "jmsqueue_jndi_name": "BOSIQueue",
+            "jmsqueue_name": "BOSIQueue"
+          },
+          {
+            "jmsqueue_sub_deploy_name": null,
+            "jmsqueue_jndi_name": "CxBOSIQueue",
+            "jmsqueue_name": "CXQueue"
+          },
+          {
+            "jmsqueue_sub_deploy_name": null,
+            "jmsqueue_jndi_name": "NON_PERSISTENT_EXECUTION_QUEUE",
+            "jmsqueue_name": "NON_PERSISTENT_EXECUTION_QUEUE"
+          },
+          {
+            "jmsqueue_sub_deploy_name": null,
+            "jmsqueue_jndi_name": "PERSISTENT_EXECUTION_QUEUE",
+            "jmsqueue_name": "PERSISTENT_EXECUTION_QUEUE"
+          }
+        ],
+        "subdeploy_name": null,
+        "jmsresource_name": "bosiJMSResource",
+        "jmstopics": [],
+        "subdeploy_target": null,
+        "target_server": "bosiCluster"
+      },
+      {
+        "jmsresource_location": "jms/systemmodule-gcmetms-jms.xml",
+        "jmsqueues": [
+          {
+            "jmsqueue_sub_deploy_name": null,
+            "jmsqueue_jndi_name": "jms/GcmEtmsCommentsJobQueue",
+            "jmsqueue_name": "GcmEtmsCommentsJobQueue"
+          }
+        ],
+        "subdeploy_name": null,
+        "jmsresource_name": "SystemModule-GCMETMS",
+        "jmstopics": [],
+        "subdeploy_target": null,
+        "target_server": "bosiCluster"
+      },
+      {
+        "jmsresource_location": "jms/systemmodule-gcm-jms.xml",
+        "jmsqueues": [
+          {
+            "jmsqueue_sub_deploy_name": null,
+            "jmsqueue_jndi_name": "jms/GcmBillingJobQueue",
+            "jmsqueue_name": "GcmBillingJobQueue "
+          }
+        ],
+        "subdeploy_name": null,
+        "jmsresource_name": "SystemModule-GCM",
+        "jmstopics": [],
+        "subdeploy_target": null,
+        "target_server": "bosiCluster"
+      }
+    ],
+    "domain_name": "/apps/opt/weblogic/config/bosi",
+    "servers": [
+      {
+        "server_cluster": null,
+        "listen_port": "6001",
+        "server_name": "AdminServer"
+      },
+      {
+        "server_cluster": "bosiCluster",
+        "listen_port": "7777",
+        "server_name": "bosi_srv_01"
+      }
+    ],
+    "applications": [
+      {
+        "target_servers": "bosiCluster",
+        "app_path": "/apps/opt/weblogic/bosi/bosi.ear",
+        "module_type": "ear",
+        "app_name": "vip"
+      },
+      {
+        "target_servers": "bosiCluster",
+        "app_path": "/apps/opt/weblogic/bosi/prescontent/eBOSI",
+        "module_type": "war",
+        "app_name": "bosi"
+      },
+      {
+        "target_servers": "bosiCluster",
+        "app_path": "/apps/opt/weblogic/bosi/war/vzb-jamon-2.73.war",
+        "module_type": "war",
+        "app_name": "vzb-jamon"
+      }
+    ],
+    "clusters": [
+      {
+        "cluster_name": "bosiCluster"
+      }
+    ],
+    "domain_version": "10.3.6.0"
+  },
+  {
+    "domain_config_location": "/apps/opt/weblogic/config/esgservices/config/config.xml",
+    "datasources": [
+      {
+        "jndi_name": "enterprise.CPDataSource",
+        "datasource_location": "jdbc/esgservices2eCPPool-0880-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "esgservices.CPPool",
+        "target_server": "esgservicesCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.pats.PatsTXDataSource",
+        "datasource_location": "jdbc/esgservices2eCPPoolTx-9236-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "esgservices.CPPoolTx",
+        "target_server": "esgservicesCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.VMMDataSource",
+        "datasource_location": "jdbc/enterprise2eVMMPool-3643-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "enterprise.VMMPool",
+        "target_server": "esgservicesCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.IbtmDataSource",
+        "datasource_location": "jdbc/operations2eIBTMPool-7728-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "operations.IBTMPool",
+        "target_server": "esgservicesCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.MIBDataSource",
+        "datasource_location": "jdbc/operations2eEnterpriseMIBPool-4337-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "operations.EnterpriseMIBPool",
+        "target_server": "esgservicesCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.DgfDataSource",
+        "datasource_location": "jdbc/operations2eDGFPool-6627-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "operations.DGFPool",
+        "target_server": "esgservicesCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.AORTADataSource",
+        "datasource_location": "jdbc/operations2eAORTAPool-8043-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "operations.AORTAPool",
+        "target_server": "esgservicesCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.ELIDataSource",
+        "datasource_location": "jdbc/operations2eEliPool-8876-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "operations.EliPool",
+        "target_server": "esgservicesCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.MetricsDataSource",
+        "datasource_location": "jdbc/metric2eMetricsPool-6335-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "metric.MetricsPool",
+        "target_server": "esgservicesCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      }
+    ],
+    "jmsresources": [
+      {
+        "jmsresource_location": "jms/safmetricsbridge-jms.xml",
+        "jmsqueues": [],
+        "subdeploy_name": null,
+        "jmsresource_name": "SAFMetricsBridge",
+        "jmstopics": [],
+        "subdeploy_target": null,
+        "target_server": "esgservicesCluster"
+      },
+      {
+        "jmsresource_location": "jms/bosiecsjmsresource-jms.xml",
+        "jmsqueues": [
+          {
+            "jmsqueue_sub_deploy_name": "BOSIECSJMSServer-jmsgroup",
+            "jmsqueue_jndi_name": "BOSIECSQueue",
+            "jmsqueue_name": "BOSIECSQueue"
+          }
+        ],
+        "subdeploy_name": null,
+        "jmsresource_name": "BOSIECSJMSResource",
+        "jmstopics": [],
+        "subdeploy_target": null,
+        "target_server": "esgservicesCluster"
+      },
+      {
+        "jmsresource_location": "jms/esgservicesjmsresource-jms.xml",
+        "jmsqueues": [
+          {
+            "jmsqueue_sub_deploy_name": null,
+            "jmsqueue_jndi_name": "IrmReportQueue",
+            "jmsqueue_name": "IrmReportQueue"
+          },
+          {
+            "jmsqueue_sub_deploy_name": null,
+            "jmsqueue_jndi_name": "enterprise.framework.AsyncWebServiceOutgoingQueue",
+            "jmsqueue_name": "AsyncWebServiceOutgoingQueue"
+          }
+        ],
+        "subdeploy_name": null,
+        "jmsresource_name": "esgservicesJMSResource",
+        "jmstopics": [],
+        "subdeploy_target": null,
+        "target_server": "esgservicesCluster"
+      }
+    ],
+    "domain_name": "/apps/opt/weblogic/config/esgservices",
+    "servers": [
+      {
+        "server_cluster": null,
+        "listen_port": "8003",
+        "server_name": "AdminServer"
+      },
+      {
+        "server_cluster": "esgservicesCluster",
+        "listen_port": "8888",
+        "server_name": "esgservices_srv_01"
+      }
+    ],
+    "applications": [
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/trService.ear",
+        "module_type": "war",
+        "app_name": "trService"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/wfServices.ear",
+        "module_type": "war",
+        "app_name": "wfServices"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/Intbilling-emea.ear",
+        "module_type": "ear",
+        "app_name": "Intbilling-emea"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/esgservices.ear",
+        "module_type": "ear",
+        "app_name": "ecpesg"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/irmService.ear",
+        "module_type": "war",
+        "app_name": "irmService"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/wgEnrollment.ear",
+        "module_type": "war",
+        "app_name": "wgEnrollment"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/billing-emea.ear",
+        "module_type": "ear",
+        "app_name": "billing-emea"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/adminService.ear",
+        "module_type": "ear",
+        "app_name": "esgws_app"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/pmiService.ear",
+        "module_type": "war",
+        "app_name": "pmiService"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/isrService.ear",
+        "module_type": "war",
+        "app_name": "isrService"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/ECCServiceAlert.ear",
+        "module_type": "ear",
+        "app_name": "ECCServiceAlert"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/wgService.ear",
+        "module_type": "war",
+        "app_name": "wgService"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/amServices.ear",
+        "module_type": "war",
+        "app_name": "amservices"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/publishOrderDetails.ear",
+        "module_type": "war",
+        "app_name": "publishOrderDetails"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/eQuoteService.ear",
+        "module_type": "ear",
+        "app_name": "eQuoteService"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/wgEntitlement.ear",
+        "module_type": "war",
+        "app_name": "wgEntitlement"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/cdService.ear",
+        "module_type": "war",
+        "app_name": "cdService"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/inquiryService.ear",
+        "module_type": "war",
+        "app_name": "inquiryService"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/iorderServices.ear",
+        "module_type": "ear",
+        "app_name": "iOrder"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/war/ecsService.war",
+        "module_type": "war",
+        "app_name": "ecs"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/nmEntitlementService.ear",
+        "module_type": "war",
+        "app_name": "nmEntitlementService"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/globalServices.ear",
+        "module_type": "ear",
+        "app_name": "global"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/vwmsServices.ear",
+        "module_type": "war",
+        "app_name": "vwmsServices"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/GCHService.ear",
+        "module_type": "war",
+        "app_name": "GCHService"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/ECCSOAPFaultDetails.ear",
+        "module_type": "ear",
+        "app_name": "ECCSOAPFaultDetails"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/ecsResponseService.ear",
+        "module_type": "ear",
+        "app_name": "ecsResponseService"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/portalOrderService.ear",
+        "module_type": "ear",
+        "app_name": "portalOrderService"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/Epayment-status.ear",
+        "module_type": "ear",
+        "app_name": "Epayment-status"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/PaymentAccount.ear",
+        "module_type": "ear",
+        "app_name": "PaymentAccount"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/VECOnlineBilling.ear",
+        "module_type": "ear",
+        "app_name": "VECOnlineBilling"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/Payment-profile.ear",
+        "module_type": "ear",
+        "app_name": "PaymentProfile"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/orderSummaryService.ear",
+        "module_type": "ear",
+        "app_name": "orderSummaryService"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/ddcService.ear",
+        "module_type": "ear",
+        "app_name": "ddcService"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/vzbOrderUpdateService.ear",
+        "module_type": "ear",
+        "app_name": "vzbOrderUpdateService"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/gescService.ear",
+        "module_type": "ear",
+        "app_name": "gescService"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/gescServicejaxws.ear",
+        "module_type": "ear",
+        "app_name": "gescServiceWs"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/aliasUpdatesWs.ear",
+        "module_type": "ear",
+        "app_name": "aliasUpdatesWs"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/fiosServiceEar.ear",
+        "module_type": "ear",
+        "app_name": "FiosService"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/portalEaasService.ear",
+        "module_type": "ear",
+        "app_name": "portalEaasService"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/portalPremisysService.ear",
+        "module_type": "ear",
+        "app_name": "portalPremisysService"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/metricsService.ear",
+        "module_type": "ear",
+        "app_name": "metricsService"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/gchAmServices.ear",
+        "module_type": "ear",
+        "app_name": "gchAmServices"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/isrServicejaxws.ear",
+        "module_type": "ear",
+        "app_name": "isrServiceWS"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/nxPortalServices.ear",
+        "module_type": "ear",
+        "app_name": "nxPortalServices"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/b2cSpreadSheetReadyjaxws.ear",
+        "module_type": "ear",
+        "app_name": "b2cSpreadSheetReadyWS"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/wgEntitlementDoc.ear",
+        "module_type": "war",
+        "app_name": "wgEntitlementDoc"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/wgUserServices.ear",
+        "module_type": "war",
+        "app_name": "wgUserServices"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/smServices.ear",
+        "module_type": "war",
+        "app_name": "smServices"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/q2cServices.ear",
+        "module_type": "war",
+        "app_name": "q2cServices"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/wgGchServices.ear",
+        "module_type": "war",
+        "app_name": "wgGchServices"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/wgMobileServices.ear",
+        "module_type": "war",
+        "app_name": "wgMobileServices"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/e2eiService.ear",
+        "module_type": "war",
+        "app_name": "e2eiService"
+      },
+      {
+        "target_servers": "esgservicesCluster",
+        "app_path": "/apps/opt/esgservices/txnServices.ear",
+        "module_type": "ear",
+        "app_name": "VECTransactionService"
+      }
+    ],
+    "clusters": [
+      {
+        "cluster_name": "esgservicesCluster"
+      }
+    ],
+    "domain_version": "10.3.6.0"
+  },
+  {
+    "domain_config_location": "/apps/opt/weblogic/config/apm/config/config.xml",
+    "datasources": [
+      {
+        "jndi_name": "b2bDataSource",
+        "datasource_location": "jdbc/EnterpriseB2BPool-8941-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "EnterpriseB2BPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.JcmsDataSource",
+        "datasource_location": "jdbc/EnterpriseJcmsPool-2300-jdbc.xml",
+        "driver_name": "oracle.jdbc.xa.client.OracleXADataSource",
+        "datasource_name": "EnterpriseJcmsPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.VASPDataSource",
+        "datasource_location": "jdbc/EnterpriseVASPPool-5403-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "EnterpriseVASPPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.ASPDataSource",
+        "datasource_location": "jdbc/EnterpriseVASPPoolTx-1079-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "EnterpriseVASPPoolTx",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": null,
+        "datasource_location": "jdbc/avsEbizdev2-6199-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "avsEbizdev2",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.B2bDataSource",
+        "datasource_location": "jdbc/apm2eB2bPool-4078-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "apm.B2bPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.VMMOPUSDataSource",
+        "datasource_location": "jdbc/apm2eVMMOPUSPool-9265-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "apm.VMMOPUSPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@143.251.144.27:1526:ldss"
+      },
+      {
+        "jndi_name": "enterprise.DfrgDataSource",
+        "datasource_location": "jdbc/enterpriseDDFRGPool-1402-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "enterpriseDDFRGPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.CPDataSource",
+        "datasource_location": "jdbc/apm2eCPPool-7591-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "apm.CPPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.CPTxDataSource",
+        "datasource_location": "jdbc/apm2eCPPoolTx-7555-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "apm.CPPoolTx",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.pats.PatsTXDataSource",
+        "datasource_location": "jdbc/apm2eCPPoolPatsTx-1411-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "apm.CPPoolPatsTx",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.EADataSource",
+        "datasource_location": "jdbc/apm2eEAPool-2104-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "apm.EAPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.EATxDataSource",
+        "datasource_location": "jdbc/apm2eEAPoolTx-7508-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "apm.EAPoolTx",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.SIADataSource",
+        "datasource_location": "jdbc/apm2eEnterpriseSIAPool-0282-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "apm.EnterpriseSIAPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.Metrics5DataSource",
+        "datasource_location": "jdbc/apm2eMetrics5Pool-9134-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "apm.Metrics5Pool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.MetricsDataSource",
+        "datasource_location": "jdbc/apm2eMetricsPool-5921-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "apm.MetricsPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": null,
+        "datasource_location": "jdbc/apm2eOrderPool-0378-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "apm.OrderPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.UtilDataSource",
+        "datasource_location": "jdbc/apm2eUtilPool-0050-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "apm.UtilPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.VMMDataSource",
+        "datasource_location": "jdbc/apm2eVMMPool-1650-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "apm.VMMPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.ccpsOpsDataSource",
+        "datasource_location": "jdbc/apm2eccpsUdpPool-5398-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "apm.ccpsUdpPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.MIBDataSource",
+        "datasource_location": "jdbc/operations2eEnterpriseMIBPool-4337-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "operations.EnterpriseMIBPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.DgfDataSource",
+        "datasource_location": "jdbc/operations2eDGFPool-6627-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "operations.DGFPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.ELIDataSource",
+        "datasource_location": "jdbc/apm2eEliPool-3230-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "apm.EliPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": null,
+        "datasource_location": "jdbc/apm2eJMSStorePool-8147-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "apm.JMSStorePool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": null,
+        "datasource_location": "jdbc/apm2eJMSStorePool2-6677-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "apm.JMSStorePool2",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.bpi.TXDataSource",
+        "datasource_location": "jdbc/EnterpriseBPIPool-8118-jdbc.xml",
+        "driver_name": "oracle.jdbc.driver.OracleDriver",
+        "datasource_name": "EnterpriseBPIPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.odm.TXDataSource",
+        "datasource_location": "jdbc/EnterpriseODMPool-1645-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "EnterpriseODMPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.EDBDataSource",
+        "datasource_location": "jdbc/EnterpriseEDBPool-2594-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "EnterpriseEDBPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.EDBTxDataSource",
+        "datasource_location": "jdbc/EnterpriseEDBPoolTx-4846-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "EnterpriseEDBPoolTx",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.ECCDatasource",
+        "datasource_location": "jdbc/apm2eECCPool-5759-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "apm.ECCPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "jdbc/OPRO",
+        "datasource_location": "jdbc/OSConnectionPool-6354-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "OSConnectionPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST =ekyfddd1scan.ebiz.verizon.com)(PORT = 1800))(LOAD_BALANCE = no)(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = OPSIT2)))"
+      },
+      {
+        "jndi_name": "jdbc/CW",
+        "datasource_location": "jdbc/CWConnectionPool-0882-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "CWConnectionPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=ekyfddd1scan.ebiz.verizon.com)(PORT=1800))(CONNECT_DATA=(SERVICE_NAME=PQSITA)))"
+      },
+      {
+        "jndi_name": "enterprise.ReportDataSource",
+        "datasource_location": "jdbc/apm2eReportPool-8912-jdbc.xml",
+        "driver_name": "oracle.jdbc.xa.client.OracleXADataSource",
+        "datasource_name": "apm.ReportPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "enterprise.MobilityMetrixDataSource",
+        "datasource_location": "jdbc/MetrixDataSource-5174-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "MetrixDataSource",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@omzgrid114scan.vzbi.com:1800:NTRTST"
+      },
+      {
+        "jndi_name": "enterprise.EtmsReportDataSource",
+        "datasource_location": "jdbc/EtmsReportPool-6485-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "EtmsReportPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@ndcgrid120vip.vzbi.com:1800:ETMSRPST.world"
+      },
+      {
+        "jndi_name": "enterprise.MBODataSource",
+        "datasource_location": "jdbc/enterprise2eMBOPool-5799-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "enterprise.MBOPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.242 )(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 113.130.228.243 )(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = IORDER)))"
+      },
+      {
+        "jndi_name": "gch.Metrics5DataSource",
+        "datasource_location": "jdbc/gch2eMetrics5Pool-7136-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "gch.Metrics5Pool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@113.130.228.242:1521/IORDER"
+      },
+      {
+        "jndi_name": "gch.MetricsDataSource",
+        "datasource_location": "jdbc/gch2eMetricsPool-7091-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "gch.MetricsPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@113.130.228.242:1521/IORDER"
+      },
+      {
+        "jndi_name": "gch.CPDataSource",
+        "datasource_location": "jdbc/gch2eCPPool-4165-jdbc.xml",
+        "driver_name": "oracle.jdbc.OracleDriver",
+        "datasource_name": "gch.CPPool",
+        "target_server": "apmCluster",
+        "jdbc_url": "jdbc:oracle:thin:@113.130.228.242:1521/IORDER"
+      }
+    ],
+    "jmsresources": [
+      {
+        "jmsresource_location": "jms/safmetricsbridge-jms.xml",
+        "jmsqueues": [],
+        "subdeploy_name": null,
+        "jmsresource_name": "SAFMetricsBridge",
+        "jmstopics": [],
+        "subdeploy_target": null,
+        "target_server": "apmCluster"
+      },
+      {
+        "jmsresource_location": "jms/vpsexecutionjmsresource-jms.xml",
+        "jmsqueues": [
+          {
+            "jmsqueue_sub_deploy_name": "VpsExecution-jmsgroup",
+            "jmsqueue_jndi_name": "NON_PERSISTENT_EXECUTION_QUEUE",
+            "jmsqueue_name": "NON_PERSISTENT_EXECUTION_QUEUE"
+          },
+          {
+            "jmsqueue_sub_deploy_name": "VpsExecution-jmsgroup",
+            "jmsqueue_jndi_name": "PERSISTENT_EXECUTION_QUEUE",
+            "jmsqueue_name": "PERSISTENT_EXECUTION_QUEUE"
+          },
+          {
+            "jmsqueue_sub_deploy_name": "VpsExecution-apm_srv_0119135064961782699212",
+            "jmsqueue_jndi_name": "NON_PERSISTENT_EXECUTION_QUEUE",
+            "jmsqueue_name": "dist_NON_PERSISTENT_EXECUTION_QUEUE_auto"
+          },
+          {
+            "jmsqueue_sub_deploy_name": "VpsExecution-apm_srv_0119135064961782699212",
+            "jmsqueue_jndi_name": "PERSISTENT_EXECUTION_QUEUE",
+            "jmsqueue_name": "dist_PERSISTENT_EXECUTION_QUEUE_auto"
+          }
+        ],
+        "subdeploy_name": null,
+        "jmsresource_name": "VpsExecutionJMSResource",
+        "jmstopics": [],
+        "subdeploy_target": null,
+        "target_server": "apmCluster"
+      },
+      {
+        "jmsresource_location": "jms/metricsjmsresource-jms.xml",
+        "jmsqueues": [
+          {
+            "jmsqueue_sub_deploy_name": "MetricsJMSServer-jmsgroup",
+            "jmsqueue_jndi_name": "MetricsLogQueue",
+            "jmsqueue_name": "MetricsLogQueue"
+          }
+        ],
+        "subdeploy_name": null,
+        "jmsresource_name": "MetricsJMSResource",
+        "jmstopics": [],
+        "subdeploy_target": null,
+        "target_server": null
+      },
+      {
+        "jmsresource_location": "jms/repairjmsresource-jms.xml",
+        "jmsqueues": [
+          {
+            "jmsqueue_sub_deploy_name": "RepairJMSServer-jmsgroup",
+            "jmsqueue_jndi_name": "BOSIRepairQueue",
+            "jmsqueue_name": "BOSIRepairQueue"
+          },
+          {
+            "jmsqueue_sub_deploy_name": "RepairJMSServer-apm_srv_012728069751173188796",
+            "jmsqueue_jndi_name": "BOSIRepairQueue",
+            "jmsqueue_name": "dist_BOSIRepairQueue_auto"
+          }
+        ],
+        "subdeploy_name": null,
+        "jmsresource_name": "RepairJMSResource",
+        "jmstopics": [],
+        "subdeploy_target": null,
+        "target_server": "apmCluster"
+      },
+      {
+        "jmsresource_location": "jms/cnpjmsresource-jms.xml",
+        "jmsqueues": [
+          {
+            "jmsqueue_sub_deploy_name": "CnpJMSServer-jmsgroup",
+            "jmsqueue_jndi_name": "enterprise.cnp.TriggerMessageDestination",
+            "jmsqueue_name": "CnpTriggerMessageDestination"
+          },
+          {
+            "jmsqueue_sub_deploy_name": "CnpJMSServer-apm_srv_0111298864941385461302",
+            "jmsqueue_jndi_name": "enterprise.cnp.TriggerMessageDestination",
+            "jmsqueue_name": "dist_CnpTriggerMessageDestination_auto"
+          }
+        ],
+        "subdeploy_name": null,
+        "jmsresource_name": "CnpJMSResource",
+        "jmstopics": [],
+        "subdeploy_target": null,
+        "target_server": "apmCluster"
+      },
+      {
+        "jmsresource_location": "jms/cnpremotejmsresource-jms.xml",
+        "jmsqueues": [],
+        "subdeploy_name": null,
+        "jmsresource_name": "CnpRemoteJMSResource",
+        "jmstopics": [
+          {
+            "jmstopic_jndi_name": "enterprise.cnp.RemoteEngineDestination",
+            "jmstopic_name": "CnpRemoteEngineTopic"
+          },
+          {
+            "jmstopic_jndi_name": "enterprise.cnp.RemoteEngineDestination",
+            "jmstopic_name": "dist_CnpRemoteEngineTopic_auto"
+          }
+        ],
+        "subdeploy_target": null,
+        "target_server": "apmCluster"
+      },
+      {
+        "jmsresource_location": "jms/cacheinvalidationtriggerjmsresource-jms.xml",
+        "jmsqueues": [
+          {
+            "jmsqueue_sub_deploy_name": "CacheInvalidationTriggerJmsServer-jmsgroup",
+            "jmsqueue_jndi_name": "enterprise.framework.cacheinvalidation.queue",
+            "jmsqueue_name": "CacheInvalidationTriggerQueue"
+          },
+          {
+            "jmsqueue_sub_deploy_name": "CacheInvalidationTriggerJmsServer-apm_srv_013030182631660189383",
+            "jmsqueue_jndi_name": "enterprise.framework.cacheinvalidation.queue",
+            "jmsqueue_name": "dist_CacheInvalidationTriggerQueue_auto"
+          }
+        ],
+        "subdeploy_name": null,
+        "jmsresource_name": "CacheInvalidationTriggerJMSResource",
+        "jmstopics": [],
+        "subdeploy_target": null,
+        "target_server": "apmCluster"
+      },
+      {
+        "jmsresource_location": "jms/apmjmsresource-jms.xml",
+        "jmsqueues": [],
+        "subdeploy_name": null,
+        "jmsresource_name": "apmJMSResource",
+        "jmstopics": [],
+        "subdeploy_target": null,
+        "target_server": "apmCluster"
+      }
+    ],
+    "domain_name": "/apps/opt/weblogic/config/apm",
+    "servers": [
+      {
+        "server_cluster": null,
+        "listen_port": "9001",
+        "server_name": "AdminServer"
+      },
+      {
+        "server_cluster": "apmCluster",
+        "listen_port": "9797",
+        "server_name": "apm_srv_01"
+      }
+    ],
+    "applications": [
+      {
+        "target_servers": "apmCluster",
+        "app_path": "/apps/opt/apm/apm.ear",
+        "module_type": "ear",
+        "app_name": "apm_ejbs"
+      },
+      {
+        "target_servers": "apmCluster",
+        "app_path": "/apps/opt/apm/prescontent/operations",
+        "module_type": "war",
+        "app_name": "operations"
+      },
+      {
+        "target_servers": "apmCluster",
+        "app_path": "/apps/opt/apm/war/vzb-jamon-2.73.war",
+        "module_type": "war",
+        "app_name": "vzb-jamon"
+      }
+    ],
+    "clusters": [
+      {
+        "cluster_name": "apmCluster"
+      }
+    ],
+    "domain_version": "10.3.6.0"
+  }
+]
